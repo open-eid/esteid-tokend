@@ -1,0 +1,4 @@
+[submodule "smartcardpp"]
+	path = smartcardpp
+	url = ../smartcardpp
+	branch = development/3.9
