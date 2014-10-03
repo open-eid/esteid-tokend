@@ -1,0 +1,7 @@
+Esteid-tokend version 3.8 release notes
+
+- Added support for new ID card version v3.5.1 to esteid-tokend driver.
+- Started using esteid-tokend driver in OSX (instead of OpenSC).
+
+Known issues:
+- esteid-tokend driver does not support using PIN pad device.
