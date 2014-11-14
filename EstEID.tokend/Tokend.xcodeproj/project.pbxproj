@@ -24,7 +24,6 @@
 		F60B657317FD810A004772D7 /* EstEIDManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60B657117FD810A004772D7 /* EstEIDManager.cpp */; };
 		F60B657617FD8355004772D7 /* SCardLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60B657417FD8355004772D7 /* SCardLog.cpp */; };
 		F6864BC5178D802A0066A43F /* AUTHORS in Resources */ = {isa = PBXBuildFile; fileRef = F6864BC2178D802A0066A43F /* AUTHORS */; };
-		F6864BC6178D802A0066A43F /* LICENSE.BSD in Resources */ = {isa = PBXBuildFile; fileRef = F6864BC3178D802A0066A43F /* LICENSE.BSD */; };
 		F6864BC7178D802A0066A43F /* LICENSE.LGPL in Resources */ = {isa = PBXBuildFile; fileRef = F6864BC4178D802A0066A43F /* LICENSE.LGPL */; };
 		F6ABAFE81755F011006FA2E1 /* AUTHORS in Resources */ = {isa = PBXBuildFile; fileRef = F6ABAFB11755F010006FA2E1 /* AUTHORS */; };
 		F6ABAFED1755F011006FA2E1 /* CardBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6ABAFB61755F010006FA2E1 /* CardBase.cpp */; };
@@ -50,18 +49,6 @@
 		F6DBFEA6171FCC4600B51D4F /* TokenContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6DBFE94171FCC4600B51D4F /* TokenContext.cpp */; };
 		F6EB22F41758C987000D52D0 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EB225A175881B7000D52D0 /* libcrypto.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		F6FA0B1C172525A7009D60AE /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /System/Library/Security/tokend;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4728F16D0F5D9CC3003BD129 /* PCSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PCSC.framework; path = /System/Library/Frameworks/PCSC.framework; sourceTree = "<absolute>"; };
@@ -91,7 +78,6 @@
 		F60B657417FD8355004772D7 /* SCardLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SCardLog.cpp; sourceTree = "<group>"; };
 		F60B657517FD8355004772D7 /* SCardLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCardLog.h; sourceTree = "<group>"; };
 		F6864BC2178D802A0066A43F /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AUTHORS; sourceTree = "<group>"; };
-		F6864BC3178D802A0066A43F /* LICENSE.BSD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.BSD; sourceTree = "<group>"; };
 		F6864BC4178D802A0066A43F /* LICENSE.LGPL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.LGPL; sourceTree = "<group>"; };
 		F6ABAFB11755F010006FA2E1 /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AUTHORS; sourceTree = "<group>"; };
 		F6ABAFB61755F010006FA2E1 /* CardBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CardBase.cpp; sourceTree = "<group>"; };
@@ -280,7 +266,6 @@
 				4C86D3A0070B4122006A0C7F /* esteid.cpp */,
 				4C86D3A3070B4122006A0C7F /* EstEIDError.cpp */,
 				F6864BC2178D802A0066A43F /* AUTHORS */,
-				F6864BC3178D802A0066A43F /* LICENSE.BSD */,
 				F6864BC4178D802A0066A43F /* LICENSE.LGPL */,
 				4C86D3A4070B4122006A0C7F /* EstEIDError.h */,
 				4C86D3A5070B4122006A0C7F /* EstEIDKeyHandle.cpp */,
@@ -464,7 +449,6 @@
 				52B260670BC5A864007E00F1 /* Resources */,
 				52B2606D0BC5A864007E00F1 /* Sources */,
 				52B260740BC5A864007E00F1 /* Frameworks */,
-				F6FA0B1C172525A7009D60AE /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -511,7 +495,6 @@
 				52B2606C0BC5A864007E00F1 /* esteid_smartcard.mdsinfo in Resources */,
 				F6ABAFE81755F011006FA2E1 /* AUTHORS in Resources */,
 				F6864BC5178D802A0066A43F /* AUTHORS in Resources */,
-				F6864BC6178D802A0066A43F /* LICENSE.BSD in Resources */,
 				F6864BC7178D802A0066A43F /* LICENSE.LGPL in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
