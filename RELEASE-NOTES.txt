@@ -1,3 +1,12 @@
+Esteid-tokend version 3.10 release notes
+--------------------------------------
+Changes compared to ver 3.8
+
+- Fixed problem with version 3.5 ID-card and Digi-ID that occurred with smart card readers that support extended APDUs when using browser plug-in in OSX 10.10. 
+- Development of the software can now be monitored in GitHub environment: https://github.com/open-eid/esteid-tokend
+
+
+
 Esteid-tokend version 3.8 release notes
 
 - Added support for new ID card version v3.5.1 to esteid-tokend driver.
