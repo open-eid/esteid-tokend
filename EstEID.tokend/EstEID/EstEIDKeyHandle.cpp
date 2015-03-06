@@ -2,7 +2,7 @@
  * EstEID.tokend
  *
  * This software is released under either the GNU Library General Public
- * License (see LICENSE.LGPL)
+ * License (see LICENSE.LGPL) or the BSD License (see LICENSE.BSD).
  *
  * Note that the only valid version of the LGPL license as far as this
  * project is concerned is the original GNU Library General Public License
@@ -59,6 +59,17 @@ void EstEIDKeyHandle::generateSignature(const Context &context,
   if (context.algorithm() != CSSM_ALGID_RSA)
     CssmError::throwMe(CSSMERR_CSP_INVALID_ALGORITHM);
 
+/*
+Mar  6 16:13:49 tok_esteid  EstEIDKeyHandle::generateSignature alg: 42 signOnly: 0
+Mar  6 16:13:49 tok_esteid  SSL signature request
+Context signature context{type=2, alg=42, CSP=502910256, 3 attributes@0x251000:
+ Attr{type=10800004, size=4, value=1}
+ Attr{type=80000024, size=308, value=0x251024}
+ Attr{type=40000003, size=88, value=0x251158}
+} // end Context
+Mar  6 16:13:49 exception   0x3371e0 CSSM CSSM_ERRCODE_FUNCTION_NOT_IMPLEMENTED (0x7)
+*/
+  // TBC
   if (signOnly == CSSM_ALGID_NONE) {
     // Special case used by SSL it's an RSA signature, without the ASN1
     // stuff
@@ -77,7 +88,7 @@ void EstEIDKeyHandle::generateSignature(const Context &context,
     CssmError::throwMe(CSSMERR_CSP_INVALID_ATTR_PADDING);
 
   try {
-    ByteVec result = mToken.getCard().sign(ByteVec(input.Data, input.Data + input.Length), EstEIDManager::SSL, EstEIDManager::AUTH);
+    ByteVec result = mToken.getCard().sign(ByteVec(input.Data, input.Data + input.Length), EstEIDManager::SSL, EstEIDManager::AUTH, mToken.getPIN1());
     unsigned char *outputData = reinterpret_cast<unsigned char *>(malloc(result.size()));
     memcpy(outputData, &result[0], result.size());
     signature.Data = outputData;

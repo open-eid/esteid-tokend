@@ -2,7 +2,7 @@
  * EstEID.tokend
  *
  * This software is released under either the GNU Library General Public
- * License (see LICENSE.LGPL)
+ * License (see LICENSE.LGPL) or the BSD License (see LICENSE.BSD).
  *
  * Note that the only valid version of the LGPL license as far as this
  * project is concerned is the original GNU Library General Public License
@@ -27,7 +27,9 @@ class EstEIDSchema;
 
 class EstEIDTokenPriv;
 
-
+//
+// "The" token
+//
 class EstEIDToken : public Tokend::ISO7816Token {
   friend class EstEIDRecord;
 
@@ -57,6 +59,9 @@ public:
       const unsigned char *pin, size_t pinLength);
 
   virtual void unverifyPIN(int pinNum);
+    
+    PinString getPIN1();
+    void setPIN1(PinString PIN1);
 
 protected:
   void populate();
@@ -69,6 +74,8 @@ private:
   void checkPrivate();
 
   map<string, string> X509_subject_names;
+    
+    PinString pin1;
 
 public:
   void *mConnection;

@@ -2,7 +2,7 @@
  * EstEID.tokend
  *
  * This software is released under either the GNU Library General Public
- * License (see LICENSE.LGPL)
+ * License (see LICENSE.LGPL) or the BSD License (see LICENSE.BSD).
  *
  * Note that the only valid version of the LGPL license as far as this
  * project is concerned is the original GNU Library General Public License
@@ -19,6 +19,7 @@
 #include "EstEIDError.h"
 #include "EstEIDRecord.h"
 #include "EstEIDSchema.h"
+#include "../../smartcardpp/PCSCManager.h"
 
 #include <security_cdsa_client/aclclient.h>
 
@@ -83,9 +84,13 @@ public:
       eCard = NULL;
     }
   }
+  
+  
 };
 
-EstEIDToken::EstEIDToken() : d(NULL), mPinStatus(0) {
+EstEIDToken::EstEIDToken() :
+d(NULL),
+mPinStatus(0) {
   mTokenContext = this;
   try {
     _log("d = %p", d);
@@ -105,7 +110,8 @@ void EstEIDToken::checkPrivate() {
   }
 }
 
-uint32 EstEIDToken::probe(SecTokendProbeFlags flags, char tokenUid[TOKEND_MAX_UID]) {
+uint32 EstEIDToken::probe(SecTokendProbeFlags flags,
+    char tokenUid[TOKEND_MAX_UID]) {
   FLOG;
   checkPrivate();
   uint32 retCode = NULL;
@@ -127,8 +133,10 @@ uint32 EstEIDToken::probe(SecTokendProbeFlags flags, char tokenUid[TOKEND_MAX_UI
 
 using namespace std;
 
-void EstEIDToken::establish(const CSSM_GUID *guid, uint32 subserviceId, SecTokendEstablishFlags flags, const char *cacheDirectory,
-                            const char *workDirectory, char mdsDirectory[PATH_MAX], char printName[PATH_MAX]) {
+void EstEIDToken::establish(const CSSM_GUID *guid, uint32 subserviceId,
+    SecTokendEstablishFlags flags, const char *cacheDirectory,
+    const char *workDirectory, char mdsDirectory[PATH_MAX],
+    char printName[PATH_MAX]) {
   FLOG;
 
   _log("printName = %s, cacheDir = %s, mdsDir = %s", printName, cacheDirectory, mdsDirectory);
@@ -146,7 +154,6 @@ void EstEIDToken::establish(const CSSM_GUID *guid, uint32 subserviceId, SecToken
       strcat(printName, X509_subject_names["surname"].c_str());
       strcat(printName, ", ");
       strcat(printName, X509_subject_names["serialNumber"].c_str());
-      strcat(printName, " (PIN1)");
 
       mSchema = new EstEIDSchema(d->card().getKeySize());
       mSchema->create();
@@ -197,7 +204,8 @@ void EstEIDToken::authenticate(CSSM_DB_ACCESS_TYPE mode, const AccessCredentials
   Token::authenticate(mode, cred);
 }
 
-void EstEIDToken::verifyPIN(int pinNum, const unsigned char *pin, size_t pinLength) {
+void EstEIDToken::verifyPIN(int pinNum,
+    const unsigned char *pin, size_t pinLength) {
   FLOG;
   checkPrivate();
 
@@ -214,6 +222,7 @@ void EstEIDToken::verifyPIN(int pinNum, const unsigned char *pin, size_t pinLeng
       try {
         d->card().validateAuthPin(pinStr, retries);
         mPinStatus = SCARD_SUCCESS;
+          setPIN1(pinStr);
       } catch(std::exception &e) {
     _log("authentication failed, %d retries left", retries);
   }
@@ -222,6 +231,8 @@ void EstEIDToken::verifyPIN(int pinNum, const unsigned char *pin, size_t pinLeng
       CssmError::throwMe(CSSM_ERRCODE_SAMPLE_VALUE_NOT_SUPPORTED);
   }
 }
+
+
 
 void EstEIDToken::unverifyPIN(int pinNum) {
   FLOG;
@@ -256,7 +267,13 @@ void EstEIDToken::getAcl(const char *tag, uint32 &count, AclEntryInfo *&acls) {
     // (it's further limited by the object itself).
     mAclEntries.add(CssmClient::AclFactory::AnySubject(mAclEntries.allocator()), AclAuthorizationSet(CSSM_ACL_AUTHORIZATION_DB_READ, 0));
 
-    mAclEntries.addPin(AclFactory::PromptPWSubject(mAclEntries.allocator(), CssmData()), 1);
+    mAclEntries.addPin(AclFactory::PWSubject(mAclEntries.allocator()), 1);
+    if (d->card().isSecureConnection()) {
+      mAclEntries.addPin(AclFactory::ProtectedPWSubject(mAclEntries.allocator()), 1);
+    }
+    else {
+      mAclEntries.addPin(AclFactory::PromptPWSubject(mAclEntries.allocator(), CssmData()), 1);
+    }
   }
   count = mAclEntries.size();
   acls = mAclEntries.entries();
@@ -285,3 +302,14 @@ void EstEIDToken::populate() {
 //	eSignKey->setAdornment(mSchema->publicKeyHashCoder().certificateKey(), new Tokend::LinkedRecordAdornment(eSignCert));
 }
 
+void EstEIDToken::setPIN1(PinString PIN1)
+{
+    FLOG;
+    this->pin1 = PIN1;
+}
+
+PinString EstEIDToken::getPIN1()
+{
+    FLOG;
+    return this->pin1;
+}
