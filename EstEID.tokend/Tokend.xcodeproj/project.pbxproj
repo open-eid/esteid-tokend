@@ -422,7 +422,7 @@
 					"$(SRCROOT)/include",
 				);
 				INFOPLIST_FILE = EstEID/Info.plist;
-				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Security/tokend";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Security/tokend";
 				ONLY_ACTIVE_ARCH = YES;
 				OPT_CPPXFLAGS = "$(OPT_CXFLAGS) -fno-enforce-eh-specs -fno-implement-inlines";
 				OPT_CXFLAGS = "-DNDEBUG $(OPT_INLINEXFLAGS)";
@@ -472,7 +472,7 @@
 					"$(SRCROOT)/include",
 				);
 				INFOPLIST_FILE = EstEID/Info.plist;
-				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Security/tokend";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Security/tokend";
 				ONLY_ACTIVE_ARCH = YES;
 				OPT_CPPXFLAGS = "$(OPT_CXFLAGS) -fno-enforce-eh-specs -fno-implement-inlines";
 				OPT_CXFLAGS = "-DNDEBUG $(OPT_INLINEXFLAGS)";
