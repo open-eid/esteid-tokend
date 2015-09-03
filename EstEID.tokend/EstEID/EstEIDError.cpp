@@ -20,18 +20,18 @@
 // EstEIDError exceptions
 //
 EstEIDError::EstEIDError(uint16_t sw) : SCardError(sw) {
-  IFDEBUG(debugDiagnose(this));
+    IFDEBUG(debugDiagnose(this));
 }
 
 EstEIDError::~EstEIDError() throw () {
 }
 
 const char *EstEIDError::what() const throw () {
-  return "EstEID error";
+    return "EstEID error";
 }
 
 void EstEIDError::throwMe(uint16_t sw) {
-  throw EstEIDError(sw);
+    throw EstEIDError(sw);
 }
 
 #if !defined(NDEBUG)

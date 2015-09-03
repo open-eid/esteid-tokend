@@ -20,44 +20,37 @@
 #include "../tokend/Record.h"
 
 class EstEIDRecord : public Tokend::Record {
-  NOCOPY(EstEIDRecord)
+    NOCOPY(EstEIDRecord)
+
 public:
-  EstEIDRecord(const char *description);
-
-  ~EstEIDRecord();
-
-  virtual const char *description();
+    EstEIDRecord(const char *description);
+    ~EstEIDRecord();
+    virtual const char *description();
 
 protected:
-  const char *mDescription;
+    const char *mDescription;
 };
 
 class EstEIDKeyRecord : public EstEIDRecord {
-  NOCOPY(EstEIDKeyRecord)
+    NOCOPY(EstEIDKeyRecord)
+
 public:
-  EstEIDKeyRecord(const char *description,
-      const Tokend::MetaRecord &metaRecord, bool signOnly);
-
-  virtual ~EstEIDKeyRecord();
-
-  virtual void getAcl(const char *tag, uint32 &count,
-      AclEntryInfo *&aclList);
+    EstEIDKeyRecord(const char *description, const Tokend::MetaRecord &metaRecord, bool signOnly);
+    virtual ~EstEIDKeyRecord();
+    virtual void getAcl(const char *tag, uint32 &count, AclEntryInfo *&aclList);
 
 private:
-  bool mSignOnly;
-  AutoAclEntryInfoList mAclEntries;
-
+    bool mSignOnly;
+    AutoAclEntryInfoList mAclEntries;
 };
 
 class EstEIDCertRecord : public EstEIDRecord {
-  NOCOPY(EstEIDCertRecord)
+    NOCOPY(EstEIDCertRecord)
+
 public:
-  EstEIDCertRecord(const char *description) : EstEIDRecord(description) {
-  }
-
-  virtual ~EstEIDCertRecord();
-
-  virtual Tokend::Attribute *getDataAttribute(Tokend::TokenContext *tokenContext);
+    EstEIDCertRecord(const char *description) : EstEIDRecord(description) {}
+    virtual ~EstEIDCertRecord();
+    virtual Tokend::Attribute *getDataAttribute(Tokend::TokenContext *tokenContext);
 };
 
 #endif /* !_ESTEIDRECORD_H_ */

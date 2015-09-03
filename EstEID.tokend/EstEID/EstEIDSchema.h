@@ -21,30 +21,28 @@
 #include "EstEIDKeyHandle.h"
 
 namespace Tokend {
-  class Relation;
-
-  class MetaRecord;
-
-  class AttributeCoder;
+    class Relation;
+    class MetaRecord;
+    class AttributeCoder;
 }
 
 class EstEIDSchema : public Tokend::Schema {
-  NOCOPY(EstEIDSchema)
+    NOCOPY(EstEIDSchema)
+
 public:
-  EstEIDSchema(uint32 keySize);
-
-  virtual ~EstEIDSchema();
-
-  virtual void create();
+    EstEIDSchema(uint32_t keySize);
+    virtual ~EstEIDSchema();
+    virtual void create();
 
 protected:
-  Tokend::Relation *createKeyRelation(CSSM_DB_RECORDTYPE keyType);
+    Tokend::Relation *createKeyRelation(CSSM_DB_RECORDTYPE keyType);
 
 private:
-  Tokend::ConstAttributeCoder mKeyAlgorithmCoder;
-  Tokend::ConstAttributeCoder mKeySizeCoder;
+    Tokend::DataAttributeCoder mEstEIDDataAttributeCoder;
+    Tokend::ConstAttributeCoder mKeyAlgorithmCoder;
+    Tokend::ConstAttributeCoder mKeySizeCoder;
 
-  EstEIDKeyHandleFactory mEstEIDKeyHandleFactory;
+    EstEIDKeyHandleFactory mEstEIDKeyHandleFactory;
 };
 
 #endif /* !_ESTEIDSCHEMA_H_ */

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>56E8FA73-8F36-479F-BDB1-1B0C100968BD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9FDF56711FFDC68F75A8B4AACA230DC022CC4370</key>
+		<string>https://stash.ria.ee/scm/baas/esteid-tokend.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>EstEID.tokend/Tokend.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9FDF56711FFDC68F75A8B4AACA230DC022CC4370</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://stash.ria.ee/scm/baas/esteid-tokend.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9FDF56711FFDC68F75A8B4AACA230DC022CC4370</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9FDF56711FFDC68F75A8B4AACA230DC022CC4370</string>
+			<key>IDESourceControlWCCName</key>
+			<string>esteid-tokend</string>
+		</dict>
+	</array>
+</dict>
+</plist>
