@@ -10,16 +10,22 @@
 
 1. Fetch the source
 
-        git clone --recursive https://github.com/open-eid/esteid-tokend
+        git clone https://github.com/open-eid/esteid-tokend
         cd esteid-tokend
 
-2. Build
+2. Build & Install (clears token cache & does a clean install)
+
+        sudo sh clean_install.sh
+        
+3. Or do it manually
+        
+ 3.1 Build
 
         xcodebuild -project EstEID.tokend/Tokend.xcodeproj
-
-3. Install
-
-        xcodebuild -project EstEID.tokend/Tokend.xcodeproj install DSTROOT=/
+        
+ 3.2 Install
+        
+        xcodebuild -project EstEID.tokend/Tokend.xcodeproj clean install DSTROOT=/
 
 4. Execute
 
