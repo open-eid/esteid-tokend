@@ -11,6 +11,7 @@
 		47B5F0BA0F5E61B8007B9806 /* EstEID_utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47B5F0B90F5E61B8007B9806 /* EstEID_utility.cpp */; };
 		47C251950F5C80F1007D49BD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C251940F5C80F1007D49BD /* CoreFoundation.framework */; };
 		4EDF7BB21A150B0900C28796 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDF7BB11A150B0900C28796 /* libcrypto.dylib */; };
+		4EDF7BB51A150D9A00C28796 /* Certificate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF7BB31A150D9A00C28796 /* Certificate.cpp */; };
 		52B260680BC5A864007E00F1 /* esteid_csp_capabilities.mdsinfo in Resources */ = {isa = PBXBuildFile; fileRef = 4C5C1CE8073065EA00AECB7F /* esteid_csp_capabilities.mdsinfo */; };
 		52B260690BC5A864007E00F1 /* esteid_csp_capabilities_common.mds in Resources */ = {isa = PBXBuildFile; fileRef = 4C5C1CE9073065EA00AECB7F /* esteid_csp_capabilities_common.mds */; };
 		52B2606A0BC5A864007E00F1 /* esteid_csp_primary.mdsinfo in Resources */ = {isa = PBXBuildFile; fileRef = 4C5C1CEA073065EA00AECB7F /* esteid_csp_primary.mdsinfo */; };
@@ -22,9 +23,15 @@
 		52B260710BC5A864007E00F1 /* EstEIDRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C86D3A7070B4122006A0C7F /* EstEIDRecord.cpp */; };
 		52B260720BC5A864007E00F1 /* EstEIDSchema.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C86D3A9070B4122006A0C7F /* EstEIDSchema.cpp */; };
 		52B260730BC5A864007E00F1 /* EstEIDToken.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C86D3AB070B4122006A0C7F /* EstEIDToken.cpp */; };
-		8D0A24D11B96F8D400540600 /* locked_allocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D0A24D01B96F8D400540600 /* locked_allocator.cpp */; };
+		F60B657317FD810A004772D7 /* EstEIDManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60B657117FD810A004772D7 /* EstEIDManager.cpp */; };
+		F60B657617FD8355004772D7 /* SCardLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60B657417FD8355004772D7 /* SCardLog.cpp */; };
 		F6864BC5178D802A0066A43F /* AUTHORS in Resources */ = {isa = PBXBuildFile; fileRef = F6864BC2178D802A0066A43F /* AUTHORS */; };
 		F6864BC7178D802A0066A43F /* LICENSE.LGPL in Resources */ = {isa = PBXBuildFile; fileRef = F6864BC4178D802A0066A43F /* LICENSE.LGPL */; };
+		F6ABAFE81755F011006FA2E1 /* AUTHORS in Resources */ = {isa = PBXBuildFile; fileRef = F6ABAFB11755F010006FA2E1 /* AUTHORS */; };
+		F6ABAFED1755F011006FA2E1 /* CardBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6ABAFB61755F010006FA2E1 /* CardBase.cpp */; };
+		F6ABB0021755F011006FA2E1 /* locked_allocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6ABAFD51755F011006FA2E1 /* locked_allocator.cpp */; };
+		F6ABB0041755F011006FA2E1 /* PCSCManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6ABAFDA1755F011006FA2E1 /* PCSCManager.cpp */; };
+		F6ABB0051755F011006FA2E1 /* SCError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6ABAFDD1755F011006FA2E1 /* SCError.cpp */; };
 		F6DBFE96171FCC4600B51D4F /* Adornment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6DBFE74171FCC4600B51D4F /* Adornment.cpp */; };
 		F6DBFE97171FCC4600B51D4F /* Attribute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6DBFE76171FCC4600B51D4F /* Attribute.cpp */; };
 		F6DBFE98171FCC4600B51D4F /* AttributeCoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6DBFE78171FCC4600B51D4F /* AttributeCoder.cpp */; };
@@ -67,14 +74,26 @@
 		4C86D3AC070B4122006A0C7F /* EstEIDToken.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = EstEIDToken.h; sourceTree = "<group>"; };
 		4C86D3AD070B4122006A0C7F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EDF7BB11A150B0900C28796 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
+		4EDF7BB31A150D9A00C28796 /* Certificate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Certificate.cpp; sourceTree = "<group>"; };
+		4EDF7BB41A150D9A00C28796 /* Certificate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Certificate.h; sourceTree = "<group>"; };
 		52B2607B0BC5A864007E00F1 /* EstEID.tokend */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EstEID.tokend; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D0A24CE1B96F86000540600 /* PinString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinString.h; sourceTree = "<group>"; };
-		8D0A24CF1B96F8A400540600 /* locked_allocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = locked_allocator.h; sourceTree = "<group>"; };
-		8D0A24D01B96F8D400540600 /* locked_allocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = locked_allocator.cpp; sourceTree = "<group>"; };
-		8D0A24D21B96F90F00540600 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
-		8D5037FA1B8A53B90033995E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		F60B657117FD810A004772D7 /* EstEIDManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EstEIDManager.cpp; sourceTree = "<group>"; };
+		F60B657217FD810A004772D7 /* EstEIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstEIDManager.h; sourceTree = "<group>"; };
+		F60B657417FD8355004772D7 /* SCardLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SCardLog.cpp; sourceTree = "<group>"; };
+		F60B657517FD8355004772D7 /* SCardLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCardLog.h; sourceTree = "<group>"; };
 		F6864BC2178D802A0066A43F /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AUTHORS; sourceTree = "<group>"; };
 		F6864BC4178D802A0066A43F /* LICENSE.LGPL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.LGPL; sourceTree = "<group>"; };
+		F6ABAFB11755F010006FA2E1 /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AUTHORS; sourceTree = "<group>"; };
+		F6ABAFB61755F010006FA2E1 /* CardBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CardBase.cpp; sourceTree = "<group>"; };
+		F6ABAFB71755F010006FA2E1 /* CardBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBase.h; sourceTree = "<group>"; };
+		F6ABAFC81755F010006FA2E1 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		F6ABAFD11755F010006FA2E1 /* helperMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helperMacro.h; sourceTree = "<group>"; };
+		F6ABAFD51755F011006FA2E1 /* locked_allocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = locked_allocator.cpp; sourceTree = "<group>"; };
+		F6ABAFD61755F011006FA2E1 /* locked_allocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = locked_allocator.h; sourceTree = "<group>"; };
+		F6ABAFDA1755F011006FA2E1 /* PCSCManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PCSCManager.cpp; sourceTree = "<group>"; };
+		F6ABAFDB1755F011006FA2E1 /* PCSCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCSCManager.h; sourceTree = "<group>"; };
+		F6ABAFDD1755F011006FA2E1 /* SCError.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SCError.cpp; sourceTree = "<group>"; };
+		F6ABAFDE1755F011006FA2E1 /* SCError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCError.h; sourceTree = "<group>"; };
 		F6DBFE74171FCC4600B51D4F /* Adornment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Adornment.cpp; sourceTree = "<group>"; };
 		F6DBFE75171FCC4600B51D4F /* Adornment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Adornment.h; sourceTree = "<group>"; };
 		F6DBFE76171FCC4600B51D4F /* Attribute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Attribute.cpp; sourceTree = "<group>"; };
@@ -128,6 +147,7 @@
 		08FB7794FE84155DC02AAC07 /* TokendEstEID */ = {
 			isa = PBXGroup;
 			children = (
+				F6ABB00A1755F030006FA2E1 /* smartcardpp */,
 				F6DBFE73171FCC4600B51D4F /* tokend */,
 				4C86D39F070B4122006A0C7F /* EstEID */,
 				4CA858F0065441220083DED3 /* External Frameworks */,
@@ -177,10 +197,6 @@
 				4C86D3AD070B4122006A0C7F /* Info.plist */,
 				47B5F0B80F5E619E007B9806 /* EstEID_utility.h */,
 				47B5F0B90F5E61B8007B9806 /* EstEID_utility.cpp */,
-				8D0A24CE1B96F86000540600 /* PinString.h */,
-				8D0A24CF1B96F8A400540600 /* locked_allocator.h */,
-				8D0A24D01B96F8D400540600 /* locked_allocator.cpp */,
-				8D0A24D21B96F90F00540600 /* common.h */,
 			);
 			path = EstEID;
 			sourceTree = "<group>";
@@ -188,12 +204,36 @@
 		4CA858F0065441220083DED3 /* External Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8D5037FA1B8A53B90033995E /* libiconv.dylib */,
 				4EDF7BB11A150B0900C28796 /* libcrypto.dylib */,
 				4728F16D0F5D9CC3003BD129 /* PCSC.framework */,
 				47C251940F5C80F1007D49BD /* CoreFoundation.framework */,
 			);
 			name = "External Frameworks";
+			sourceTree = "<group>";
+		};
+		F6ABB00A1755F030006FA2E1 /* smartcardpp */ = {
+			isa = PBXGroup;
+			children = (
+				4EDF7BB31A150D9A00C28796 /* Certificate.cpp */,
+				4EDF7BB41A150D9A00C28796 /* Certificate.h */,
+				F6ABAFB11755F010006FA2E1 /* AUTHORS */,
+				F6ABAFB61755F010006FA2E1 /* CardBase.cpp */,
+				F6ABAFB71755F010006FA2E1 /* CardBase.h */,
+				F6ABAFC81755F010006FA2E1 /* common.h */,
+				F6ABAFD11755F010006FA2E1 /* helperMacro.h */,
+				F6ABAFD51755F011006FA2E1 /* locked_allocator.cpp */,
+				F6ABAFD61755F011006FA2E1 /* locked_allocator.h */,
+				F6ABAFDA1755F011006FA2E1 /* PCSCManager.cpp */,
+				F6ABAFDB1755F011006FA2E1 /* PCSCManager.h */,
+				F6ABAFDD1755F011006FA2E1 /* SCError.cpp */,
+				F6ABAFDE1755F011006FA2E1 /* SCError.h */,
+				F60B657117FD810A004772D7 /* EstEIDManager.cpp */,
+				F60B657217FD810A004772D7 /* EstEIDManager.h */,
+				F60B657417FD8355004772D7 /* SCardLog.cpp */,
+				F60B657517FD8355004772D7 /* SCardLog.h */,
+			);
+			name = smartcardpp;
+			path = ../smartcardpp;
 			sourceTree = "<group>";
 		};
 		F6DBFE73171FCC4600B51D4F /* tokend */ = {
@@ -291,6 +331,7 @@
 				52B2606A0BC5A864007E00F1 /* esteid_csp_primary.mdsinfo in Resources */,
 				52B2606B0BC5A864007E00F1 /* esteid_dl_primary.mdsinfo in Resources */,
 				52B2606C0BC5A864007E00F1 /* esteid_smartcard.mdsinfo in Resources */,
+				F6ABAFE81755F011006FA2E1 /* AUTHORS in Resources */,
 				F6864BC5178D802A0066A43F /* AUTHORS in Resources */,
 				F6864BC7178D802A0066A43F /* LICENSE.LGPL in Resources */,
 			);
@@ -304,6 +345,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				52B2606E0BC5A864007E00F1 /* esteid.cpp in Sources */,
+				F60B657317FD810A004772D7 /* EstEIDManager.cpp in Sources */,
+				4EDF7BB51A150D9A00C28796 /* Certificate.cpp in Sources */,
 				52B2606F0BC5A864007E00F1 /* EstEIDError.cpp in Sources */,
 				52B260700BC5A864007E00F1 /* EstEIDKeyHandle.cpp in Sources */,
 				52B260710BC5A864007E00F1 /* EstEIDRecord.cpp in Sources */,
@@ -312,13 +355,13 @@
 				47B5F0BA0F5E61B8007B9806 /* EstEID_utility.cpp in Sources */,
 				F6DBFE96171FCC4600B51D4F /* Adornment.cpp in Sources */,
 				F6DBFE97171FCC4600B51D4F /* Attribute.cpp in Sources */,
-				8D0A24D11B96F8D400540600 /* locked_allocator.cpp in Sources */,
 				F6DBFE98171FCC4600B51D4F /* AttributeCoder.cpp in Sources */,
 				F6DBFE99171FCC4600B51D4F /* Cursor.cpp in Sources */,
 				F6DBFE9A171FCC4600B51D4F /* DbValue.cpp in Sources */,
 				F6DBFE9B171FCC4600B51D4F /* KeyHandle.cpp in Sources */,
 				F6DBFE9C171FCC4600B51D4F /* MetaAttribute.cpp in Sources */,
 				F6DBFE9D171FCC4600B51D4F /* MetaRecord.cpp in Sources */,
+				F60B657617FD8355004772D7 /* SCardLog.cpp in Sources */,
 				F6DBFE9E171FCC4600B51D4F /* PKCS11Object.cpp in Sources */,
 				F6DBFE9F171FCC4600B51D4F /* Record.cpp in Sources */,
 				F6DBFEA0171FCC4600B51D4F /* RecordHandle.cpp in Sources */,
@@ -328,6 +371,10 @@
 				F6DBFEA4171FCC4600B51D4F /* SelectionPredicate.cpp in Sources */,
 				F6DBFEA5171FCC4600B51D4F /* Token.cpp in Sources */,
 				F6DBFEA6171FCC4600B51D4F /* TokenContext.cpp in Sources */,
+				F6ABAFED1755F011006FA2E1 /* CardBase.cpp in Sources */,
+				F6ABB0021755F011006FA2E1 /* locked_allocator.cpp in Sources */,
+				F6ABB0041755F011006FA2E1 /* PCSCManager.cpp in Sources */,
+				F6ABB0051755F011006FA2E1 /* SCError.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

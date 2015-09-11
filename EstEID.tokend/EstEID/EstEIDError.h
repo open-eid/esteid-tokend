@@ -18,25 +18,25 @@
 #define _ESTEIDERROR_H_
 
 #include "../tokend/SCardError.h"
-#include "EstEID_utility.h"
 
 
 class EstEIDError : public Tokend::SCardError {
 protected:
-    EstEIDError(uint16_t sw);
-    virtual ~EstEIDError() throw ();
+  EstEIDError(uint16_t sw);
+
+  virtual ~EstEIDError() throw ();
 
 public:
-    virtual const char *what() const throw ();
-    
-    static void check(uint16_t sw) {
-        _log("check response code: %x", sw);
-        if (sw != SCARD_SUCCESS) throwMe(sw);
-    }
-    static void throwMe(uint16_t sw) __attribute__((noreturn));
+  virtual const char *what() const throw ();
+
+  static void check(uint16_t sw) {
+    if (sw != SCARD_SUCCESS) throwMe(sw);
+  }
+
+  static void throwMe(uint16_t sw) __attribute__((noreturn));
 
 protected:
-    IFDEBUG(void debugDiagnose(const void *id) const;)
+  IFDEBUG(void debugDiagnose(const void *id) const;)
 };
 
 #endif /* !_ESTEIDERROR_H_ */

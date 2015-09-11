@@ -18,9 +18,11 @@
 #include "EstEID_utility.h"
 
 int main(int argc, const char *argv[]) {
-    _log("main starting with %d arguments", argc);
-    secdelay("/tmp/delay/EstEID");
-    token = new EstEIDToken();
-    return SecTokendMain(argc, argv, token->callbacks(), token->support());
+  FLOG;
+  _log("tok_esteid", "main starting with %d arguments", argc);
+  secdelay("/tmp/delay/EstEID");
+
+  token = new EstEIDToken();
+  return SecTokendMain(argc, argv, token->callbacks(), token->support());
 }
 

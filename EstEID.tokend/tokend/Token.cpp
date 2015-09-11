@@ -40,8 +40,6 @@
 #include <security_utilities/logging.h>
 #include <CommonCrypto/CommonDigest.h>
 
-#include "EstEID_utility.h"
-
 //
 // SPI wrapper macros
 //
@@ -769,7 +767,6 @@ void Token::establish(const CSSM_GUID *guid, uint32 subserviceId,
 bool Token::cachedObject(CSSM_DB_RECORDTYPE relationId,
 	const std::string &name, CssmData &object) const
 {
-    _log("read from cache: %s, relationId: %u", name.c_str(), relationId);
 	try
 	{
 		UnixPlusPlus::AutoFileDesc fd(cachedObjectPath(relationId, name));
@@ -852,7 +849,7 @@ void Token::authenticate(CSSM_DB_ACCESS_TYPE mode,
 	{
 		// A mode of CSSM_DB_ACCESS_RESET is a request to deauthenticate
 		// the card completely.
-		_log("unverifying PIN%d", pinNum);
+		secdebug("authenticate", "unverifying PIN%d", pinNum);
 		return unverifyPIN(pinNum);
 	}
 	else if (cred && pinNum > 0)
@@ -878,7 +875,7 @@ void Token::authenticate(CSSM_DB_ACCESS_TYPE mode,
 		CssmError::throwMe(CSSM_ERRCODE_SAMPLE_VALUE_NOT_SUPPORTED);
 	}
 	else
-		_log("ignoring non-PIN authentication request");
+		secdebug("authenticate", "ignoring non-PIN authentication request");
 }
 
 void Token::changeOwner(const AclOwnerPrototype &owner)
@@ -889,7 +886,6 @@ void Token::changeOwner(const AclOwnerPrototype &owner)
 
 void Token::changeAcl(const AccessCredentials &cred, const AclEdit &edit)
 {
-    _log("changeAcl");
 	// We don't allow adding or deleting of acls currently
 	switch (edit.mode())
 	{

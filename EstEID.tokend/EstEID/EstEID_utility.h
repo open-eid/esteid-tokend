@@ -16,14 +16,10 @@
 
 using namespace std;
 
-namespace EstEidUtility {
-    string string_to_hex(const std::string& input);
-    string charsToHex(char * data, int dataLength);
-}
-
 #define TIMESTAMP_BUFFER_LEN 30
 
 void write_log(const char *func, const char *file, int line, const char *message, ...);
+
 FILE *openLog(const char *func, const char *file, int line);
 
 #define FLOG _log("");
