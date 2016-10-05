@@ -3,8 +3,8 @@ ifeq ($(BUILD_NUMBER),)
 	BUILD_NUMBER = 0
 endif
 include VERSION.mk
-SIGNCERT = Developer ID Application: Riigi Infosüsteemi Amet
-INSTCERT = Developer ID Installer: Riigi Infosüsteemi Amet
+SIGNCERT ?= Developer ID Application: Riigi Infosüsteemi Amet
+INSTCERT ?= Developer ID Installer: Riigi Infosüsteemi Amet
 PROJ = xcodebuild -project EstEID.tokend/Tokend.xcodeproj VERSION=$(VERSION) BUILD_NUMBER=$(BUILD_NUMBER) -configuration Deployment -target EstEID
 
 pkg:
