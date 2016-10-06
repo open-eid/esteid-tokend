@@ -20,6 +20,7 @@ package: clean build
 	 pkgbuild --version $(VERSIONEX) \
                 --identifier ee.ria.esteid-tokend \
                 --root "EstEID.tokend/build/EstEID.tokend" \
+                --scripts scripts \
                 --install-location "$(NATIVE_PATH)/EstEID.tokend" \
                 esteid-tokend_$(VERSIONEX).pkg
 
@@ -27,7 +28,8 @@ signedpackage: codesign
 	 pkgbuild --version $(VERSIONEX) \
                 --identifier ee.ria.esteid-tokend \
                 --root "EstEID.tokend/build/EstEID.tokend" \
-                --sign "$(INSTCERT)" \
+                --scripts scripts \                
                 --install-location "$(NATIVE_PATH)/EstEID.tokend" \
+                --sign "$(INSTCERT)" \                
                 esteid-tokend_$(VERSIONEX).pkg
 
