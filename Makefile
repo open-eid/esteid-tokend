@@ -8,12 +8,15 @@ INSTCERT ?= Developer ID Installer: Riigi Infosüsteemi Amet
 OPENSSL ?= $(PWD)/../target
 
 build:
-	xcodebuild -project EstEID.tokend/Tokend.xcodeproj VERSION=$(VERSION) BUILD_NUMBER=$(BUILD_NUMBER) OPENSSL=$(OPENSSL) -configuration Deployment  clean build
+	xcodebuild -project EstEID.tokend/Tokend.xcodeproj VERSION=$(VERSION) BUILD_NUMBER=$(BUILD_NUMBER) OPENSSL=$(OPENSSL) -configuration Deployment build
+
+clean:
+	xcodebuild -project EstEID.tokend/Tokend.xcodeproj clean
 
 codesign: build
 	codesign -f -s "$(SIGNCERT)" EstEID.tokend/build/EstEID.tokend
 
-package: build
+package: clean build
 	 pkgbuild --version $(VERSIONEX) \
                 --identifier ee.ria.esteid-tokend \
                 --root "EstEID.tokend/build/EstEID.tokend" \
