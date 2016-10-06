@@ -5,11 +5,10 @@ endif
 include VERSION.mk
 SIGNCERT ?= Developer ID Application: Riigi Infosüsteemi Amet
 INSTCERT ?= Developer ID Installer: Riigi Infosüsteemi Amet
-PROJ = xcodebuild -project EstEID.tokend/Tokend.xcodeproj VERSION=$(VERSION) BUILD_NUMBER=$(BUILD_NUMBER) -configuration Deployment -target EstEID
-
+OPENSSL ?= $(PWD)/../target
 
 build:
-	$(PROJ) clean build
+	xcodebuild -project EstEID.tokend/Tokend.xcodeproj VERSION=$(VERSION) BUILD_NUMBER=$(BUILD_NUMBER) OPENSSL=$(OPENSSL) -configuration Deployment  clean build
 
 codesign: build
 	codesign -f -s "$(SIGNCERT)" EstEID.tokend/build/EstEID.tokend

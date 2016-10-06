@@ -423,19 +423,22 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					../src/,
+					"$(OPENSSL)/include",
 					./,
 					../,
-					"$(SRCROOT)/include",
 				);
 				INFOPLIST_FILE = EstEID/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Security/tokend";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(OPENSSL)/lib/",
+				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
-					"$(SRCROOT)/../../target/lib/",
+					"$(OPENSSL)/lib/",
 				);
 				ONLY_ACTIVE_ARCH = YES;
+				OPENSSL = "$(SRCROOT)/../../target";
 				OPT_CPPXFLAGS = "$(OPT_CXFLAGS) -fno-enforce-eh-specs -fno-implement-inlines";
 				OPT_CXFLAGS = "-DNDEBUG $(OPT_INLINEXFLAGS)";
 				OPT_LDXFLAGS = "-dead_strip";
@@ -478,19 +481,22 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = (
-					../src/,
+					"$(OPENSSL)/include",
 					./,
 					../,
-					"$(SRCROOT)/include",
 				);
 				INFOPLIST_FILE = EstEID/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Security/tokend";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(OPENSSL)/lib/",
+				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
-					"$(SRCROOT)/../../target/lib/",
+					"$(OPENSSL)/lib/",
 				);
 				ONLY_ACTIVE_ARCH = YES;
+				OPENSSL = "$(SRCROOT)/../../target";
 				OPT_CPPXFLAGS = "$(OPT_CXFLAGS) -fno-enforce-eh-specs -fno-implement-inlines";
 				OPT_CXFLAGS = "-DNDEBUG $(OPT_INLINEXFLAGS)";
 				OPT_LDXFLAGS = "-dead_strip";
