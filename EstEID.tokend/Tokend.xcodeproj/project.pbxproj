@@ -25,9 +25,6 @@
 		5BE4AF161DA5837300A6667B /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE4AF151DA5837300A6667B /* libcrypto.a */; };
 		F60B657317FD810A004772D7 /* EstEIDManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60B657117FD810A004772D7 /* EstEIDManager.cpp */; };
 		F60B657617FD8355004772D7 /* SCardLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60B657417FD8355004772D7 /* SCardLog.cpp */; };
-		F6864BC5178D802A0066A43F /* AUTHORS in Resources */ = {isa = PBXBuildFile; fileRef = F6864BC2178D802A0066A43F /* AUTHORS */; };
-		F6864BC7178D802A0066A43F /* LICENSE.LGPL in Resources */ = {isa = PBXBuildFile; fileRef = F6864BC4178D802A0066A43F /* LICENSE.LGPL */; };
-		F6ABAFE81755F011006FA2E1 /* AUTHORS in Resources */ = {isa = PBXBuildFile; fileRef = F6ABAFB11755F010006FA2E1 /* AUTHORS */; };
 		F6ABAFED1755F011006FA2E1 /* CardBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6ABAFB61755F010006FA2E1 /* CardBase.cpp */; };
 		F6ABB0021755F011006FA2E1 /* locked_allocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6ABAFD51755F011006FA2E1 /* locked_allocator.cpp */; };
 		F6ABB0041755F011006FA2E1 /* PCSCManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6ABAFDA1755F011006FA2E1 /* PCSCManager.cpp */; };
@@ -81,9 +78,6 @@
 		F60B657217FD810A004772D7 /* EstEIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstEIDManager.h; sourceTree = "<group>"; };
 		F60B657417FD8355004772D7 /* SCardLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SCardLog.cpp; sourceTree = "<group>"; };
 		F60B657517FD8355004772D7 /* SCardLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCardLog.h; sourceTree = "<group>"; };
-		F6864BC2178D802A0066A43F /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AUTHORS; sourceTree = "<group>"; };
-		F6864BC4178D802A0066A43F /* LICENSE.LGPL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.LGPL; sourceTree = "<group>"; };
-		F6ABAFB11755F010006FA2E1 /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AUTHORS; sourceTree = "<group>"; };
 		F6ABAFB61755F010006FA2E1 /* CardBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CardBase.cpp; sourceTree = "<group>"; };
 		F6ABAFB71755F010006FA2E1 /* CardBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBase.h; sourceTree = "<group>"; };
 		F6ABAFC81755F010006FA2E1 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
@@ -184,8 +178,6 @@
 				4C5C1CE0073065EA00AECB7F /* mds */,
 				4C86D3A0070B4122006A0C7F /* esteid.cpp */,
 				4C86D3A3070B4122006A0C7F /* EstEIDError.cpp */,
-				F6864BC2178D802A0066A43F /* AUTHORS */,
-				F6864BC4178D802A0066A43F /* LICENSE.LGPL */,
 				4C86D3A4070B4122006A0C7F /* EstEIDError.h */,
 				4C86D3A5070B4122006A0C7F /* EstEIDKeyHandle.cpp */,
 				4C86D3A6070B4122006A0C7F /* EstEIDKeyHandle.h */,
@@ -224,7 +216,6 @@
 			children = (
 				4EDF7BB31A150D9A00C28796 /* Certificate.cpp */,
 				4EDF7BB41A150D9A00C28796 /* Certificate.h */,
-				F6ABAFB11755F010006FA2E1 /* AUTHORS */,
 				F6ABAFB61755F010006FA2E1 /* CardBase.cpp */,
 				F6ABAFB71755F010006FA2E1 /* CardBase.h */,
 				F6ABAFC81755F010006FA2E1 /* common.h */,
@@ -339,9 +330,6 @@
 				52B2606A0BC5A864007E00F1 /* esteid_csp_primary.mdsinfo in Resources */,
 				52B2606B0BC5A864007E00F1 /* esteid_dl_primary.mdsinfo in Resources */,
 				52B2606C0BC5A864007E00F1 /* esteid_smartcard.mdsinfo in Resources */,
-				F6ABAFE81755F011006FA2E1 /* AUTHORS in Resources */,
-				F6864BC5178D802A0066A43F /* AUTHORS in Resources */,
-				F6864BC7178D802A0066A43F /* LICENSE.LGPL in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
