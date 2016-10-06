@@ -5,7 +5,7 @@ endif
 include VERSION.mk
 SIGNCERT ?= Developer ID Application: Riigi Infosüsteemi Amet
 INSTCERT ?= Developer ID Installer: Riigi Infosüsteemi Amet
-OPENSSL ?= $(PWD)/../target
+OPENSSL ?= $(PWD)/target
 
 build:
 	xcodebuild -project EstEID.tokend/Tokend.xcodeproj VERSION=$(VERSION) BUILD_NUMBER=$(BUILD_NUMBER) OPENSSL=$(OPENSSL) -configuration Deployment build
@@ -35,3 +35,11 @@ signedpackage: codesign
 
 install: build
 	sudo rsync --delete -av EstEID.tokend/build/EstEID.tokend/ /Library/Security/tokend/EstEID.tokend
+
+ossl:
+	git clone --depth=1 https://github.com/openssl/openssl.git -b OpenSSL_1_0_2-stable
+	(cd openssl \
+	&& KERNEL_BITS=64 ./config --prefix=$(PWD)/target -mmacosx-version-min=10.9 no-shared no-ssl2 no-idea no-dtls no-psk no-srp no-apps \
+	&& make depend \
+	&& make \
+	&& make install_sw)

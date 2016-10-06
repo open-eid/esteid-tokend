@@ -1,10 +1,4 @@
 os: osx
 language: c
-before_script:
-  - git clone --depth=1 https://github.com/openssl/openssl.git -b OpenSSL_1_0_2-stable
-  - cd openssl
-  - KERNEL_BITS=64 ./config --prefix=$PWD/../target -mmacosx-version-min=10.9 no-shared no-ssl2 no-idea no-dtls no-psk no-srp no-apps
-  - make depend && make
-  - make install_sw
-  - cd ..
-script: make package OPENSSL=$PWD/target
+before_script: make ossl
+script: make package
