@@ -3,24 +3,43 @@ ifeq ($(BUILD_NUMBER),)
 	BUILD_NUMBER = 0
 endif
 include VERSION.mk
-SIGNCERT = Developer ID Application: Riigi Infosüsteemi Amet
-INSTCERT = Developer ID Installer: Riigi Infosüsteemi Amet
-PROJ = xcodebuild -project EstEID.tokend/Tokend.xcodeproj VERSION=$(VERSION) BUILD_NUMBER=$(BUILD_NUMBER) -configuration Deployment -target EstEID
+SIGNCERT ?= Developer ID Application: Riigi Infosüsteemi Amet
+INSTCERT ?= Developer ID Installer: Riigi Infosüsteemi Amet
+OPENSSL ?= $(PWD)/target
 
-pkg:
-	$(PROJ) clean build
+build:
+	xcodebuild -project EstEID.tokend/Tokend.xcodeproj VERSION=$(VERSION) BUILD_NUMBER=$(BUILD_NUMBER) OPENSSL=$(OPENSSL) -configuration Deployment build
 
-	codesign -f -s "$(SIGNCERT)" "EstEID.tokend/build/EstEID.tokend"
+clean:
+	xcodebuild -project EstEID.tokend/Tokend.xcodeproj clean
 
+codesign: build
+	codesign -f -s "$(SIGNCERT)" EstEID.tokend/build/EstEID.tokend
+
+package: clean build
 	pkgbuild --version $(VERSIONEX) \
 		--identifier ee.ria.esteid-tokend \
 		--root "EstEID.tokend/build/EstEID.tokend" \
-		--sign "$(INSTCERT)" \
+		--scripts scripts \
 		--install-location "$(NATIVE_PATH)/EstEID.tokend" \
 		esteid-tokend_$(VERSIONEX).pkg
 
-	pkgbuild --component EstEID.tokend/build/EstEID.tokend.dSYM \
+signedpackage: codesign
+	pkgbuild --version $(VERSIONEX) \
+		--identifier ee.ria.esteid-tokend \
+		--root "EstEID.tokend/build/EstEID.tokend" \
+		--scripts scripts \
+		--install-location "$(NATIVE_PATH)/EstEID.tokend" \
 		--sign "$(INSTCERT)" \
-		--identifier "ee.ria.esteid-tokend-dbg" --version "$(VERSIONEX)" \
-		--install-location $(NATIVE_PATH) \
-		esteid-tokend-dbg_$(VERSIONEX).pkg
+		esteid-tokend_$(VERSIONEX).pkg
+
+install: build
+	sudo rsync --delete -av EstEID.tokend/build/EstEID.tokend/ /Library/Security/tokend/EstEID.tokend
+
+ossl:
+	git clone --depth=1 https://github.com/openssl/openssl.git -b OpenSSL_1_0_2-stable
+	(cd openssl \
+	&& KERNEL_BITS=64 ./config --prefix=$(PWD)/target -mmacosx-version-min=10.9 no-shared no-ssl2 no-idea no-dtls no-psk no-srp no-apps \
+	&& make depend \
+	&& make \
+	&& make install_sw)

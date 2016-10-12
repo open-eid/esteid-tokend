@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+echo 'Clearing token caches'
+rm -rf /var/db/TokenCache/tokens/*

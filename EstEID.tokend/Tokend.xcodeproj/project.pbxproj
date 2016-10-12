@@ -10,7 +10,6 @@
 		4728F16E0F5D9CC3003BD129 /* PCSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4728F16D0F5D9CC3003BD129 /* PCSC.framework */; };
 		47B5F0BA0F5E61B8007B9806 /* EstEID_utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47B5F0B90F5E61B8007B9806 /* EstEID_utility.cpp */; };
 		47C251950F5C80F1007D49BD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C251940F5C80F1007D49BD /* CoreFoundation.framework */; };
-		4EDF7BB21A150B0900C28796 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDF7BB11A150B0900C28796 /* libcrypto.dylib */; };
 		4EDF7BB51A150D9A00C28796 /* Certificate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF7BB31A150D9A00C28796 /* Certificate.cpp */; };
 		52B260680BC5A864007E00F1 /* esteid_csp_capabilities.mdsinfo in Resources */ = {isa = PBXBuildFile; fileRef = 4C5C1CE8073065EA00AECB7F /* esteid_csp_capabilities.mdsinfo */; };
 		52B260690BC5A864007E00F1 /* esteid_csp_capabilities_common.mds in Resources */ = {isa = PBXBuildFile; fileRef = 4C5C1CE9073065EA00AECB7F /* esteid_csp_capabilities_common.mds */; };
@@ -23,11 +22,9 @@
 		52B260710BC5A864007E00F1 /* EstEIDRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C86D3A7070B4122006A0C7F /* EstEIDRecord.cpp */; };
 		52B260720BC5A864007E00F1 /* EstEIDSchema.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C86D3A9070B4122006A0C7F /* EstEIDSchema.cpp */; };
 		52B260730BC5A864007E00F1 /* EstEIDToken.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C86D3AB070B4122006A0C7F /* EstEIDToken.cpp */; };
+		5BE4AF161DA5837300A6667B /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE4AF151DA5837300A6667B /* libcrypto.a */; };
 		F60B657317FD810A004772D7 /* EstEIDManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60B657117FD810A004772D7 /* EstEIDManager.cpp */; };
 		F60B657617FD8355004772D7 /* SCardLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60B657417FD8355004772D7 /* SCardLog.cpp */; };
-		F6864BC5178D802A0066A43F /* AUTHORS in Resources */ = {isa = PBXBuildFile; fileRef = F6864BC2178D802A0066A43F /* AUTHORS */; };
-		F6864BC7178D802A0066A43F /* LICENSE.LGPL in Resources */ = {isa = PBXBuildFile; fileRef = F6864BC4178D802A0066A43F /* LICENSE.LGPL */; };
-		F6ABAFE81755F011006FA2E1 /* AUTHORS in Resources */ = {isa = PBXBuildFile; fileRef = F6ABAFB11755F010006FA2E1 /* AUTHORS */; };
 		F6ABAFED1755F011006FA2E1 /* CardBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6ABAFB61755F010006FA2E1 /* CardBase.cpp */; };
 		F6ABB0021755F011006FA2E1 /* locked_allocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6ABAFD51755F011006FA2E1 /* locked_allocator.cpp */; };
 		F6ABB0041755F011006FA2E1 /* PCSCManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6ABAFDA1755F011006FA2E1 /* PCSCManager.cpp */; };
@@ -73,17 +70,14 @@
 		4C86D3AB070B4122006A0C7F /* EstEIDToken.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = EstEIDToken.cpp; sourceTree = "<group>"; };
 		4C86D3AC070B4122006A0C7F /* EstEIDToken.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = EstEIDToken.h; sourceTree = "<group>"; };
 		4C86D3AD070B4122006A0C7F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4EDF7BB11A150B0900C28796 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
 		4EDF7BB31A150D9A00C28796 /* Certificate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Certificate.cpp; sourceTree = "<group>"; };
 		4EDF7BB41A150D9A00C28796 /* Certificate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Certificate.h; sourceTree = "<group>"; };
 		52B2607B0BC5A864007E00F1 /* EstEID.tokend */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EstEID.tokend; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BE4AF151DA5837300A6667B /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../target/lib/libcrypto.a; sourceTree = "<group>"; };
 		F60B657117FD810A004772D7 /* EstEIDManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EstEIDManager.cpp; sourceTree = "<group>"; };
 		F60B657217FD810A004772D7 /* EstEIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstEIDManager.h; sourceTree = "<group>"; };
 		F60B657417FD8355004772D7 /* SCardLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SCardLog.cpp; sourceTree = "<group>"; };
 		F60B657517FD8355004772D7 /* SCardLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCardLog.h; sourceTree = "<group>"; };
-		F6864BC2178D802A0066A43F /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AUTHORS; sourceTree = "<group>"; };
-		F6864BC4178D802A0066A43F /* LICENSE.LGPL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.LGPL; sourceTree = "<group>"; };
-		F6ABAFB11755F010006FA2E1 /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AUTHORS; sourceTree = "<group>"; };
 		F6ABAFB61755F010006FA2E1 /* CardBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CardBase.cpp; sourceTree = "<group>"; };
 		F6ABAFB71755F010006FA2E1 /* CardBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBase.h; sourceTree = "<group>"; };
 		F6ABAFC81755F010006FA2E1 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
@@ -135,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EDF7BB21A150B0900C28796 /* libcrypto.dylib in Frameworks */,
+				5BE4AF161DA5837300A6667B /* libcrypto.a in Frameworks */,
 				47C251950F5C80F1007D49BD /* CoreFoundation.framework in Frameworks */,
 				4728F16E0F5D9CC3003BD129 /* PCSC.framework in Frameworks */,
 			);
@@ -152,6 +146,7 @@
 				4C86D39F070B4122006A0C7F /* EstEID */,
 				4CA858F0065441220083DED3 /* External Frameworks */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
+				5BB491FA1DA53E3600FD351B /* Frameworks */,
 			);
 			name = TokendEstEID;
 			sourceTree = "<group>";
@@ -183,8 +178,6 @@
 				4C5C1CE0073065EA00AECB7F /* mds */,
 				4C86D3A0070B4122006A0C7F /* esteid.cpp */,
 				4C86D3A3070B4122006A0C7F /* EstEIDError.cpp */,
-				F6864BC2178D802A0066A43F /* AUTHORS */,
-				F6864BC4178D802A0066A43F /* LICENSE.LGPL */,
 				4C86D3A4070B4122006A0C7F /* EstEIDError.h */,
 				4C86D3A5070B4122006A0C7F /* EstEIDKeyHandle.cpp */,
 				4C86D3A6070B4122006A0C7F /* EstEIDKeyHandle.h */,
@@ -204,11 +197,18 @@
 		4CA858F0065441220083DED3 /* External Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4EDF7BB11A150B0900C28796 /* libcrypto.dylib */,
 				4728F16D0F5D9CC3003BD129 /* PCSC.framework */,
 				47C251940F5C80F1007D49BD /* CoreFoundation.framework */,
 			);
 			name = "External Frameworks";
+			sourceTree = "<group>";
+		};
+		5BB491FA1DA53E3600FD351B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BE4AF151DA5837300A6667B /* libcrypto.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F6ABB00A1755F030006FA2E1 /* smartcardpp */ = {
@@ -216,7 +216,6 @@
 			children = (
 				4EDF7BB31A150D9A00C28796 /* Certificate.cpp */,
 				4EDF7BB41A150D9A00C28796 /* Certificate.h */,
-				F6ABAFB11755F010006FA2E1 /* AUTHORS */,
 				F6ABAFB61755F010006FA2E1 /* CardBase.cpp */,
 				F6ABAFB71755F010006FA2E1 /* CardBase.h */,
 				F6ABAFC81755F010006FA2E1 /* common.h */,
@@ -331,9 +330,6 @@
 				52B2606A0BC5A864007E00F1 /* esteid_csp_primary.mdsinfo in Resources */,
 				52B2606B0BC5A864007E00F1 /* esteid_dl_primary.mdsinfo in Resources */,
 				52B2606C0BC5A864007E00F1 /* esteid_smartcard.mdsinfo in Resources */,
-				F6ABAFE81755F011006FA2E1 /* AUTHORS in Resources */,
-				F6864BC5178D802A0066A43F /* AUTHORS in Resources */,
-				F6864BC7178D802A0066A43F /* LICENSE.LGPL in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,8 +381,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_MALLOC = YES;
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 35209;
@@ -395,7 +392,6 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "ESTEID_NAMESPACE=1";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
 				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
@@ -415,17 +411,24 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					../src/,
+					"$(OPENSSL)/include",
 					./,
 					../,
-					"$(SRCROOT)/include",
 				);
 				INFOPLIST_FILE = EstEID/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Security/tokend";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(OPENSSL)/lib/",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(OPENSSL)/lib/",
+				);
 				ONLY_ACTIVE_ARCH = YES;
+				OPENSSL = "$(SRCROOT)/../../target";
 				OPT_CPPXFLAGS = "$(OPT_CXFLAGS) -fno-enforce-eh-specs -fno-implement-inlines";
 				OPT_CXFLAGS = "-DNDEBUG $(OPT_INLINEXFLAGS)";
-				OPT_INLINEXFLAGS = " -finline-functions";
 				OPT_LDXFLAGS = "-dead_strip";
 				OPT_LDXNOPIC = ",_nopic";
 				OTHER_ASFLAGS_debug = "$(OTHER_CFLAGS)";
@@ -456,27 +459,34 @@
 		52B260780BC5A864007E00F1 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_MALLOC = YES;
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 35209;
 				FRAMEWORK_SEARCH_PATHS = ../Frameworks;
 				GCC_DYNAMIC_NO_PIC = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
-				GCC_PREPROCESSOR_DEFINITIONS = "ESTEID_NAMESPACE=1";
 				HEADER_SEARCH_PATHS = (
-					../src/,
+					"$(OPENSSL)/include",
 					./,
 					../,
-					"$(SRCROOT)/include",
 				);
 				INFOPLIST_FILE = EstEID/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Security/tokend";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(OPENSSL)/lib/",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(OPENSSL)/lib/",
+				);
 				ONLY_ACTIVE_ARCH = YES;
+				OPENSSL = "$(SRCROOT)/../../target";
 				OPT_CPPXFLAGS = "$(OPT_CXFLAGS) -fno-enforce-eh-specs -fno-implement-inlines";
 				OPT_CXFLAGS = "-DNDEBUG $(OPT_INLINEXFLAGS)";
-				OPT_INLINEXFLAGS = " -finline-functions";
 				OPT_LDXFLAGS = "-dead_strip";
 				OPT_LDXNOPIC = ",_nopic";
 				OTHER_ASFLAGS_debug = "$(OTHER_CFLAGS)";
@@ -512,7 +522,7 @@
 				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "/usr/local/SecurityPieces/Frameworks/**";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 				VERSION = 3.11.0;
 			};
@@ -525,7 +535,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)";
 				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 				VERSION = 3.11.0;
 			};
