@@ -1,4 +1,3 @@
 os: osx
 language: c
-before_script: make ossl
-script: make package
+script: make

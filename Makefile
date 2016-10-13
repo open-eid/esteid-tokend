@@ -1,45 +1,50 @@
-NATIVE_PATH = /Library/Security/tokend
-ifeq ($(BUILD_NUMBER),)
-	BUILD_NUMBER = 0
-endif
+BUILD_NUMBER ?= 0
 include VERSION.mk
-SIGNCERT ?= Developer ID Application: Riigi Infosüsteemi Amet
-INSTCERT ?= Developer ID Installer: Riigi Infosüsteemi Amet
+
+SIGNER ?= ET847QJV9F # This is the default, Riigi Infosüsteemi Amet
+
 OPENSSL ?= $(PWD)/target
 
-build:
-	xcodebuild -project EstEID.tokend/Tokend.xcodeproj VERSION=$(VERSION) BUILD_NUMBER=$(BUILD_NUMBER) OPENSSL=$(OPENSSL) -configuration Deployment build
+TMPROOT = $(PWD)/tmp
+TARGET = $(TMPROOT)/Library/Security/tokend/EstEID.tokend
+
+default: pkg
 
 clean:
-	xcodebuild -project EstEID.tokend/Tokend.xcodeproj clean
+	rm -rf $(TMPROOT)
+	git clean -dfx
 
-codesign: build
-	codesign -f -s "$(SIGNCERT)" EstEID.tokend/build/EstEID.tokend
+$(TARGET): $(OPENSSL)
+	xcodebuild -project EstEID.tokend/Tokend.xcodeproj VERSION=$(VERSION) BUILD_NUMBER=$(BUILD_NUMBER) OPENSSL=$(OPENSSL) DSTROOT=$(TMPROOT) -configuration Deployment build install
 
-package: clean build
+codesign: $(TARGET)
+	codesign -f -s "$(SIGNER)" $(TARGET)
+
+esteid-tokend.pkg: $(TARGET)
 	pkgbuild --version $(VERSIONEX) \
 		--identifier ee.ria.esteid-tokend \
-		--root "EstEID.tokend/build/EstEID.tokend" \
+		--root $(TMPROOT) \
 		--scripts scripts \
-		--install-location "$(NATIVE_PATH)/EstEID.tokend" \
-		esteid-tokend_$(VERSIONEX).pkg
+		--install-location / \
+		esteid-tokend.pkg
 
-signedpackage: codesign
+pkg: esteid-tokend.pkg
+
+dist: codesign pkg
+
+signed: codesign
 	pkgbuild --version $(VERSIONEX) \
 		--identifier ee.ria.esteid-tokend \
-		--root "EstEID.tokend/build/EstEID.tokend" \
+		--root $(TMPROOT) \
 		--scripts scripts \
-		--install-location "$(NATIVE_PATH)/EstEID.tokend" \
-		--sign "$(INSTCERT)" \
-		esteid-tokend_$(VERSIONEX).pkg
+		--install-location / \
+		--sign "$(SIGNER)" \
+		esteid-tokend.pkg
 
-install: build
-	sudo rsync --delete -av EstEID.tokend/build/EstEID.tokend/ /Library/Security/tokend/EstEID.tokend
-
-ossl:
+$(OPENSSL):
 	git clone --depth=1 https://github.com/openssl/openssl.git -b OpenSSL_1_0_2-stable
 	(cd openssl \
-	&& KERNEL_BITS=64 ./config --prefix=$(PWD)/target -mmacosx-version-min=10.9 no-shared no-ssl2 no-idea no-dtls no-psk no-srp no-apps \
+	&& KERNEL_BITS=64 ./config --prefix=$(OPENSSL) -mmacosx-version-min=10.9 no-shared no-ssl2 no-idea no-dtls no-psk no-srp no-apps \
 	&& make depend \
 	&& make \
 	&& make install_sw)
