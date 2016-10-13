@@ -2,7 +2,7 @@
 
  * License: LGPL 2.1
  * &copy; Estonian Information System Authority
- * For OSX 10.9 to 10.12
+ * For OS X 10.9 to 10.12
 
 ### Background
 
@@ -23,17 +23,13 @@ Current codebase depends on OpenSSL for certificate parsing and some other tasks
         git clone --recursive https://github.com/open-eid/esteid-tokend
         cd esteid-tokend
 
-- Fetch and compile a static version of OpenSSL
+- Build & make an installable unsigned package `esteid-tokend.pkg`
 
-        make ossl
+        make
 
-- Build & make an installable package
+- To build a [signed package](https://developer.apple.com/developer-id/), specify SIGNER
 
-        make package
-
-- To build a [signed version](https://developer.apple.com/developer-id/), specify SIGNCERT and INSTCERT on the command line
-
-        make signedpackage SIGNCERT="Mac Developer" INSTCERT="Distribution signer"
+        make signed SIGNER="XXXXXXXXXX"
 
 ## Debugging
 
