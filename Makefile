@@ -1,7 +1,7 @@
 BUILD_NUMBER ?= 0
 include VERSION.mk
 
-SIGNER ?= ET847QJV9F # This is the default, Riigi Infosüsteemi Amet
+SIGNER ?= Riigi Infosüsteemi Amet
 
 OPENSSL ?= $(PWD)/target
 
