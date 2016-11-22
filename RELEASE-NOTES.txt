@@ -1,3 +1,20 @@
+Esteid-tokend version 3.13 release notes
+--------------------------------------
+Changes compared to ver 3.12
+
+- Added support for additional hashes to solve Safari issues on macOS 10.12 (Sierra)
+- Simplified and cleaned up the make process
+
+Esteid-tokend version 3.12 release notes
+--------------------------------------
+Changes compared to ver 3.11
+
+- Smartcardpp and openssl dependencies have been removed (this is an experimental lightweight version of the EstEID tokend driver that utilizes the Tokend’s own primitive transaction interface instead of using smartcardpp)
+
+- Since the driver now uses tokend-s own reader interface to connect, disconnect and communicate with the token, it is now less prone to create a situation where the whole service hangs due to Apple bug #21437286 "PC/SC SCardGetStatusChange() blocks forever after some time".
+
+
+
 Esteid-tokend version 3.11 release notes
 --------------------------------------
 Changes compared to ver 3.10
