@@ -27,6 +27,7 @@ esteid-tokend.pkg: $(TARGET)
 		--scripts scripts \
 		--install-location / \
 		esteid-tokend.pkg
+	cp esteid-tokend.pkg esteid-tokend_$(VERSIONEX).pkg
 
 pkg: esteid-tokend.pkg
 
@@ -40,6 +41,7 @@ signed: codesign
 		--install-location / \
 		--sign "$(SIGNER)" \
 		esteid-tokend.pkg
+	cp esteid-tokend.pkg esteid-tokend_$(VERSIONEX).pkg
 
 $(OPENSSL):
 	test -e openssl || git clone --depth=1 https://github.com/openssl/openssl.git -b OpenSSL_1_0_2-stable
