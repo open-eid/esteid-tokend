@@ -18,7 +18,7 @@ $(TARGET): $(OPENSSL)
 	xcodebuild -project EstEID.tokend/Tokend.xcodeproj VERSION=$(VERSION) BUILD_NUMBER=$(BUILD_NUMBER) OPENSSL=$(OPENSSL) DSTROOT=$(TMPROOT) -configuration Deployment build install
 
 codesign: $(TARGET)
-	codesign -f -s "$(SIGNER)" $(TARGET)
+	codesign -f -s "Developer ID Application: $(SIGNER)" $(TARGET)
 
 esteid-tokend.pkg: $(TARGET)
 	pkgbuild --version $(VERSIONEX) \
@@ -39,7 +39,7 @@ signed: codesign
 		--root $(TMPROOT) \
 		--scripts scripts \
 		--install-location / \
-		--sign "$(SIGNER)" \
+		--sign "Developer ID Installer: $(SIGNER)" \
 		esteid-tokend.pkg
 	cp esteid-tokend.pkg esteid-tokend_$(VERSIONEX).pkg
 
