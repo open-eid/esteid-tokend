@@ -1,0 +1,12 @@
+﻿/*
+ Localizable.strings
+ CryptoTokenKit
+ */
+
+"CORRUPTED_CERT" = "corrupted certificate data";
+"AUTH_CERT" = "Certificate For Card Authentication";
+"SIGN_CERT" = "Certificate For Digital Signature";
+"AUTH_KEY" = "Key For Card Authentication";
+"SIGN_KEY" = "Key For Digital Signature";
+"WRONG_CONSTR" = "Unexpected constraint";
+
