@@ -72,6 +72,14 @@ public:
         continue;
       }
 
+      static const byte ecdsaOID[] = {0x2A, 0x86, 0x48, 0xCE, 0x3D, 0x02, 0x01};
+      static const ByteVec ecdsaOIDVec(ecdsaOID, ecdsaOID + sizeof(ecdsaOID));
+      ByteVec auth = eCard->getAuthCert();
+      if (std::search(auth.begin(), auth.end(), ecdsaOIDVec.begin(), ecdsaOIDVec.end()) != auth.end()) {
+          _log("ECDSA token is not supported. Card id: %s", eCard->readDocumentID().c_str());
+          return false;
+      }
+
       _log("We have our reader. Card id: %s", eCard->readDocumentID().c_str());
       return true;
     }
