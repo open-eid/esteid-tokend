@@ -72,6 +72,14 @@ public:
         continue;
       }
 
+      static const byte rsaOID[] = {0x2A, 0x86, 0x48, 0x86, 0xF7, 0x0D, 0x01, 0x01, 0x01};
+      static const ByteVec rsaOIDVec(rsaOID, rsaOID + sizeof(rsaOID));
+      ByteVec auth = eCard->getAuthCert();
+      if (std::search(auth.begin(), auth.end(), rsaOIDVec.begin(), rsaOIDVec.end()) == auth.end()) {
+          _log("RSA token is only supported. Card id: %s", eCard->readDocumentID().c_str());
+          return false;
+      }
+
       _log("We have our reader. Card id: %s", eCard->readDocumentID().c_str());
       return true;
     }
